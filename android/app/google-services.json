@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "213119325747",
+    "project_id": "edunote2-84568",
+    "storage_bucket": "edunote2-84568.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213119325747:android:0737be127a07432d8b3546",
+        "android_client_info": {
+          "package_name": "com.edunote.student.parent2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvl9lgUyZhC4RYxsIKXvnwaWi1pxGqQck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

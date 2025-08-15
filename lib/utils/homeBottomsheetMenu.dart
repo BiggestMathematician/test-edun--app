@@ -1,0 +1,85 @@
+import 'package:eschool/utils/labelKeys.dart';
+import 'package:eschool/utils/systemModules.dart';
+import 'package:eschool/utils/utils.dart';
+
+class Menu {
+  final String title;
+  final String iconUrl;
+  final String menuModuleId; //This is fixed
+
+  Menu(
+      {required this.iconUrl, required this.title, required this.menuModuleId});
+}
+
+//To add all more menu here
+
+final List<Menu> homeBottomSheetMenu = [
+  Menu(
+      menuModuleId: attendanceManagementModuleId.toString(),
+      iconUrl: Utils.getImagePath("attendance_icon.svg"),
+      title: attendanceKey),
+  Menu(
+    menuModuleId: timetableManagementModuleId.toString(),
+    iconUrl: Utils.getImagePath("timetable_icon.svg"),
+    title: timeTableKey,
+  ),
+  Menu(
+    menuModuleId: announcementManagementModuleId.toString(),
+    iconUrl: Utils.getImagePath("noticeboard_icon.svg"),
+    title: noticeBoardKey,
+  ),
+  Menu(
+      menuModuleId: examManagementModuleId.toString(),
+      iconUrl: Utils.getImagePath("exam_icon.svg"),
+      title: examsKey),
+  Menu(
+      menuModuleId: examManagementModuleId.toString(),
+      iconUrl: Utils.getImagePath("result_icon.svg"),
+      title: resultKey),
+
+  //Report module is combination of assginement and exam
+  Menu(
+      menuModuleId:
+          "$assignmentManagementModuleId$moduleIdJoiner$examManagementModuleId",
+      iconUrl: Utils.getImagePath("reports_icon.svg"),
+      title: reportsKey),
+  //graphique de note
+  Menu(
+    menuModuleId: defaultModuleId.toString(),
+    iconUrl: Utils.getImagePath("graphe.svg"),
+    title: "Notes + graphique",
+  ),
+  Menu(
+    menuModuleId: defaultModuleId.toString(),
+    iconUrl: Utils.getImagePath("parent_icon.svg"),
+    title: guardianDetailsKey,
+  ),
+
+  Menu(
+    menuModuleId: defaultModuleId.toString(),
+    iconUrl: Utils.getImagePath("tassk_add.svg"),
+    title: "Mes tâches",
+  ),
+  Menu(
+    menuModuleId: defaultModuleId.toString(),
+    iconUrl: Utils.getImagePath("punition.svg"),
+    title: "Mes punitions",
+  ),
+  Menu(
+    menuModuleId: defaultModuleId.toString(),
+    iconUrl: Utils.getImagePath("avertissement.svg"),
+    title: "Mes avertissements",
+  ),
+  Menu(
+      iconUrl: Utils.getImagePath("holiday_icon.svg"),
+      title: holidaysKey,
+      menuModuleId: holidayManagementModuleId.toString()),
+  Menu(
+      iconUrl: Utils.getImagePath("gallery.svg"),
+      title: galleryKey,
+      menuModuleId: galleryManagementModuleId.toString()),
+  Menu(
+      iconUrl: Utils.getImagePath("setting_icon.svg"),
+      title: settingsKey,
+      menuModuleId: defaultModuleId.toString()),
+];
