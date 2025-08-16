@@ -20,10 +20,14 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
-# Stripe SDK - Keep all classes to prevent R8 missing class errors
+# Stripe SDK v11.5.0 - Keep all classes to prevent R8 missing class errors
 -keep class com.stripe.android.** { *; }
 -keep class com.stripe.android.pushProvisioning.** { *; }
 -keep class com.reactnativestripesdk.** { *; }
+-keep class com.stripe.android.paymentsheet.** { *; }
+-keep class com.stripe.android.paymentlauncher.** { *; }
+-keep class com.stripe.android.model.** { *; }
+-keep class com.stripe.android.view.** { *; }
 
 # Flutter specific rules
 -keep class io.flutter.app.** { *; }
@@ -66,3 +70,19 @@
 -keepclassmembers class * {
     @android.webkit.JavascriptInterface <methods>;
 }
+
+# Keep Hive database classes
+-keep class * extends com.google.protobuf.GeneratedMessageLite { *; }
+-keep class * implements androidx.sqlite.db.SupportSQLiteOpenHelper { *; }
+
+# Keep permission handler classes
+-keep class com.baseflow.permissionhandler.** { *; }
+
+# Keep device info classes
+-keep class dev.fluttercommunity.plus.device_info.** { *; }
+
+# Keep package info classes
+-keep class dev.fluttercommunity.plus.package_info.** { *; }
+
+# Keep webview classes
+-keep class io.flutter.plugins.webviewflutter.** { *; }
