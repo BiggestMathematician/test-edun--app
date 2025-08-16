@@ -24,7 +24,7 @@ dependencies:
   # UI & animations
   flutter_svg: ^2.1.1
   google_fonts: ^6.1.0
-  dotted_border: ^3.1.0   # version compatible avec votre code existant
+  dotted_border: ^2.1.0   # fixed version for compatibility
   table_calendar: ^3.0.11
   lottie: ^3.3.0
   shimmer: ^3.0.0
@@ -35,7 +35,8 @@ dependencies:
   flutter_tex: ^5.1.10
   readmore: ^3.0.0
   flutter_widget_from_html: ^0.17.0
-  youtube_player_flutter: ^9.1.2  # ajouté pour vos vidéos YouTube
+  youtube_player_flutter: ^9.1.2
+  video_player: ^2.8.2  # added missing dependency
 
   # Networking & storage
   dio: ^5.3.1
@@ -52,6 +53,7 @@ dependencies:
   image_picker: ^1.1.2
   wakelock_plus: ^1.2.10
   timeago: ^3.5.0
+  intl: ^0.20.2  # added missing dependency
 
   # Firebase
   firebase_core: ^4.0.0
