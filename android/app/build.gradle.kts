@@ -59,6 +59,12 @@ android {
     }
 }
 
+dependencies {
+    // Add Google Play Core dependency to prevent missing class errors
+    implementation("com.google.android.play:core:1.10.3")
+    implementation("com.google.android.play:core-ktx:1.8.1")
+}
+
 flutter {
     source = "../.."
 }
