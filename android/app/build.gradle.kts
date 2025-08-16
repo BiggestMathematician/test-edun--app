@@ -59,16 +59,6 @@ android {
     }
 }
 
-dependencies {
-    // Use the newer Google Play Core libraries that Flutter provides
-    // These are automatically included by Flutter and are compatible
-    constraints {
-        implementation("com.google.android.play:core-common:2.0.4") {
-            because "Use the version provided by Flutter to avoid conflicts"
-        }
-    }
-}
-
 configurations.all {
     resolutionStrategy {
         // Force use of newer Google Play Core versions
