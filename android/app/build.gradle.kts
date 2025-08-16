@@ -73,9 +73,13 @@ dependencies {
     implementation("com.google.crypto.tink:tink-android:1.7.0")
     implementation("com.google.crypto.tink:tink:1.7.0")
     
-    // Add XML stream dependencies
-    implementation("javax.xml.stream:javax.xml.stream-api:1.0")
+    // Add Android-compatible XML dependencies
     implementation("org.apache.tika:tika-core:2.7.0")
+    implementation("androidx.annotation:annotation:1.7.0")
+    
+    // Add Android XML parser dependencies
+    implementation("org.xmlpull:xmlpull:1.1.3.1")
+    implementation("net.sf.kxml:kxml2:2.3.0")
 }
 
 configurations.all {

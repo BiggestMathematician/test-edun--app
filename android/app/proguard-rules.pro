@@ -70,10 +70,12 @@
 -keep class com.stripe.android.pushProvisioning.PushProvisioningActivityStarter { *; }
 -keep class com.stripe.android.pushProvisioning.PushProvisioningEphemeralKeyProvider { *; }
 
-# Apache Tika and XML classes
+# Apache Tika classes (for file handling)
 -keep class org.apache.tika.** { *; }
--keep class javax.xml.stream.** { *; }
--keep class javax.xml.stream.XMLStreamException { *; }
+
+# Android XML and annotation classes
+-keep class androidx.annotation.** { *; }
+-keep class android.util.** { *; }
 
 # Nimbus JOSE classes (for crypto operations)
 -keep class com.nimbusds.jose.** { *; }
