@@ -60,9 +60,25 @@ android {
 }
 
 dependencies {
-    // Add Google Play Core dependency to prevent missing class errors
-    implementation("com.google.android.play:core:1.10.3")
-    implementation("com.google.android.play:core-ktx:1.8.1")
+    // Use the newer Google Play Core libraries that Flutter provides
+    // These are automatically included by Flutter and are compatible
+    constraints {
+        implementation("com.google.android.play:core-common:2.0.4") {
+            because "Use the version provided by Flutter to avoid conflicts"
+        }
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        // Force use of newer Google Play Core versions
+        force("com.google.android.play:core-common:2.0.4")
+        force("com.google.android.play:core:2.0.4")
+        
+        // Exclude old conflicting versions
+        exclude(group = "com.google.android.play", module = "core")
+        exclude(group = "com.google.android.play", module = "core-ktx")
+    }
 }
 
 flutter {

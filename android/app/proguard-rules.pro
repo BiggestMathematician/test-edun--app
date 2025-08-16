@@ -29,16 +29,18 @@
 -keep class com.stripe.android.model.** { *; }
 -keep class com.stripe.android.view.** { *; }
 
-# Google Play Core - Keep all classes to prevent R8 missing class errors
+# Google Play Core v2.x - Keep all classes to prevent R8 missing class errors
 -keep class com.google.android.play.core.** { *; }
+-keep class com.google.android.play.core.common.** { *; }
 -keep class com.google.android.play.core.splitcompat.** { *; }
 -keep class com.google.android.play.core.splitinstall.** { *; }
 -keep class com.google.android.play.core.tasks.** { *; }
 -keep class com.google.android.play.core.appupdate.** { *; }
 -keep class com.google.android.play.core.review.** { *; }
 -keep class com.google.android.play.core.install.** { *; }
+-keep class com.google.android.play.core.listener.** { *; }
 
-# Specific missing classes from R8 error
+# Specific missing classes from R8 error (using newer versions)
 -keep class com.google.android.play.core.splitcompat.SplitCompatApplication { *; }
 -keep class com.google.android.play.core.splitinstall.SplitInstallException { *; }
 -keep class com.google.android.play.core.splitinstall.SplitInstallManager { *; }
@@ -50,6 +52,7 @@
 -keep class com.google.android.play.core.tasks.OnFailureListener { *; }
 -keep class com.google.android.play.core.tasks.OnSuccessListener { *; }
 -keep class com.google.android.play.core.tasks.Task { *; }
+-keep class com.google.android.play.core.listener.StateUpdatedListener { *; }
 
 # Specific Stripe missing classes
 -keep class com.stripe.android.pushProvisioning.EphemeralKeyUpdateListener { *; }
