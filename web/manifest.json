@@ -1,11 +1,11 @@
 {
-    "name": "edunote_student_parent_2",
-    "short_name": "edunote_student_parent_2",
+    "name": "Edunote Student Parent",
+    "short_name": "Edunote",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#22577A",
+    "theme_color": "#22577A",
+    "description": "School Management App for Students and Parents",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
@@ -30,6 +30,51 @@
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "maskable"
+        }
+    ],
+    "categories": ["education", "productivity", "utilities"],
+    "lang": "en",
+    "dir": "ltr",
+    "scope": "/",
+    "start_url": "/",
+    "display_override": ["standalone", "minimal-ui"],
+    "edge_side_panel": {
+        "preferred_width": 400
+    },
+    "file_handlers": [
+        {
+            "action": "/",
+            "accept": {
+                "text/plain": [".txt"],
+                "application/pdf": [".pdf"],
+                "image/*": [".png", ".jpg", ".jpeg", ".gif"]
+            }
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Dashboard",
+            "short_name": "Dashboard",
+            "description": "View your dashboard",
+            "url": "/dashboard",
+            "icons": [
+                {
+                    "src": "icons/Icon-192.png",
+                    "sizes": "192x192"
+                }
+            ]
+        },
+        {
+            "name": "Assignments",
+            "short_name": "Assignments",
+            "description": "View your assignments",
+            "url": "/assignments",
+            "icons": [
+                {
+                    "src": "icons/Icon-192.png",
+                    "sizes": "192x192"
+                }
+            ]
         }
     ]
 }

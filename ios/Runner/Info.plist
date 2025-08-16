@@ -31,8 +31,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -45,5 +43,84 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	
+	<!-- Camera Permission -->
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs camera access to take photos for assignments and profile pictures.</string>
+	
+	<!-- Photo Library Permission -->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs photo library access to select images for assignments and profile pictures.</string>
+	
+	<!-- Microphone Permission -->
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app needs microphone access for voice notes and audio features.</string>
+	
+	<!-- Location Permission -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs location access for attendance tracking and school-related features.</string>
+	
+	<!-- Notification Permission -->
+	<key>NSUserNotificationUsageDescription</key>
+	<string>This app needs notification access to keep you updated with school announcements and assignments.</string>
+	
+	<!-- Contacts Permission -->
+	<key>NSContactsUsageDescription</key>
+	<string>This app needs contacts access to help with communication features.</string>
+	
+	<!-- Calendar Permission -->
+	<key>NSCalendarsUsageDescription</key>
+	<string>This app needs calendar access to sync school events and schedules.</string>
+	
+	<!-- Bluetooth Permission -->
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>This app needs bluetooth access for file sharing and communication features.</string>
+	
+	<!-- Speech Recognition Permission -->
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>This app needs speech recognition access for voice input features.</string>
+	
+	<!-- Motion Usage Permission -->
+	<key>NSMotionUsageDescription</key>
+	<string>This app needs motion access for activity tracking and fitness features.</string>
+	
+	<!-- Health Permission -->
+	<key>NSHealthShareUsageDescription</key>
+	<string>This app needs health access for wellness tracking features.</string>
+	
+	<!-- Home Permission -->
+	<key>NSHomeKitUsageDescription</key>
+	<string>This app needs home access for smart home integration features.</string>
+	
+	<!-- App Tracking Transparency -->
+	<key>NSUserTrackingUsageDescription</key>
+	<string>This app needs tracking access to provide personalized content and improve user experience.</string>
+	
+	<!-- Critical Alerts -->
+	<key>NSCriticalAlertStyle</key>
+	<true/>
+	
+	<!-- Background Modes -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+		<string>background-processing</string>
+		<string>background-fetch</string>
+	</array>
+	
+	<!-- App Transport Security -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 </dict>
 </plist>
