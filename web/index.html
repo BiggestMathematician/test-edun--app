@@ -18,21 +18,79 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
-
-  <!-- iOS meta tags & icons -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Edunote Student Parent - School Management App">
+  <meta name="keywords" content="school, education, student, parent, management">
+  <meta name="author" content="Edunote">
+  <meta name="theme-color" content="#22577A">
+  
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  
+  <!-- PWA Support -->
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="edunote_student_parent_2">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Edunote">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/Icon-152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/Icon-180.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="icons/Icon-167.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/Icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/Icon-16.png">
 
-  <title>edunote_student_parent_2</title>
+  <title>Edunote Student Parent</title>
   <link rel="manifest" href="manifest.json">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="flutter_bootstrap.js" as="script">
+  
+  <!-- CSP Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; img-src 'self' data: blob: https:; media-src 'self' data: blob: https:; connect-src 'self' https: wss: ws:; font-src 'self' data: https:;">
 </head>
 <body>
+  <!-- Loading indicator -->
+  <div id="loading" style="display: flex; justify-content: center; align-items: center; height: 100vh; background: linear-gradient(135deg, #22577A 0%, #57CC99 100%); color: white; font-family: Arial, sans-serif;">
+    <div style="text-align: center;">
+      <div style="width: 50px; height: 50px; border: 3px solid rgba(255,255,255,0.3); border-top: 3px solid white; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 20px;"></div>
+      <h2>Edunote</h2>
+      <p>Loading...</p>
+    </div>
+  </div>
+  
+  <style>
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    
+    #loading {
+      background: linear-gradient(135deg, #22577A 0%, #57CC99 100%);
+    }
+  </style>
+  
   <script src="flutter_bootstrap.js" async></script>
+  <script>
+    // Hide loading indicator when Flutter is ready
+    window.addEventListener('flutter-first-frame', function() {
+      document.getElementById('loading').style.display = 'none';
+    });
+    
+    // Fallback: hide loading after timeout
+    setTimeout(function() {
+      document.getElementById('loading').style.display = 'none';
+    }, 10000);
+  </script>
 </body>
 </html>
