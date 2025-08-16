@@ -29,7 +29,7 @@
 -keep class com.stripe.android.model.** { *; }
 -keep class com.stripe.android.view.** { *; }
 
-# Google Play Core v2.x - Keep all classes to prevent R8 missing class errors
+# Google Play Core v1.x - Keep all classes to prevent R8 missing class errors
 -keep class com.google.android.play.core.** { *; }
 -keep class com.google.android.play.core.common.** { *; }
 -keep class com.google.android.play.core.splitcompat.** { *; }
@@ -40,7 +40,7 @@
 -keep class com.google.android.play.core.install.** { *; }
 -keep class com.google.android.play.core.listener.** { *; }
 
-# Specific missing classes from R8 error (using newer versions)
+# Specific missing classes from R8 error (using v1.x versions)
 -keep class com.google.android.play.core.splitcompat.SplitCompatApplication { *; }
 -keep class com.google.android.play.core.splitinstall.SplitInstallException { *; }
 -keep class com.google.android.play.core.splitinstall.SplitInstallManager { *; }
@@ -54,6 +54,14 @@
 -keep class com.google.android.play.core.tasks.Task { *; }
 -keep class com.google.android.play.core.listener.StateUpdatedListener { *; }
 
+# Google Crypto Tink - Keep all classes to prevent R8 missing class errors
+-keep class com.google.crypto.tink.** { *; }
+-keep class com.google.crypto.tink.subtle.** { *; }
+-keep class com.google.crypto.tink.subtle.Ed25519Sign { *; }
+-keep class com.google.crypto.tink.subtle.Ed25519Sign$KeyPair { *; }
+-keep class com.google.crypto.tink.subtle.Ed25519Verify { *; }
+-keep class com.google.crypto.tink.subtle.X25519 { *; }
+
 # Specific Stripe missing classes
 -keep class com.stripe.android.pushProvisioning.EphemeralKeyUpdateListener { *; }
 -keep class com.stripe.android.pushProvisioning.PushProvisioningActivity$g { *; }
@@ -66,6 +74,12 @@
 -keep class org.apache.tika.** { *; }
 -keep class javax.xml.stream.** { *; }
 -keep class javax.xml.stream.XMLStreamException { *; }
+
+# Nimbus JOSE classes (for crypto operations)
+-keep class com.nimbusds.jose.** { *; }
+-keep class com.nimbusds.jose.jwk.** { *; }
+-keep class com.nimbusds.jose.crypto.** { *; }
+-keep class com.nimbusds.jose.jwk.gen.** { *; }
 
 # Flutter specific rules
 -keep class io.flutter.app.** { *; }

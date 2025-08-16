@@ -57,17 +57,37 @@ android {
             "META-INF/*.kotlin_module"
         )
     }
+
+    // R8 configuration to prevent missing classes
+    buildFeatures {
+        buildConfig = true
+    }
+}
+
+dependencies {
+    // Add missing Google Play Core dependencies
+    implementation("com.google.android.play:core:1.10.3")
+    implementation("com.google.android.play:core-ktx:1.8.1")
+    
+    // Add crypto dependencies
+    implementation("com.google.crypto.tink:tink-android:1.7.0")
+    implementation("com.google.crypto.tink:tink:1.7.0")
+    
+    // Add XML stream dependencies
+    implementation("javax.xml.stream:javax.xml.stream-api:1.0")
+    implementation("org.apache.tika:tika-core:2.7.0")
 }
 
 configurations.all {
     resolutionStrategy {
-        // Force use of newer Google Play Core versions
-        force("com.google.android.play:core-common:2.0.4")
-        force("com.google.android.play:core:2.0.4")
+        // Force use of specific versions to avoid conflicts
+        force("com.google.android.play:core:1.10.3")
+        force("com.google.android.play:core-ktx:1.8.1")
+        force("com.google.crypto.tink:tink-android:1.7.0")
+        force("com.google.crypto.tink:tink:1.7.0")
         
-        // Exclude old conflicting versions
-        exclude(group = "com.google.android.play", module = "core")
-        exclude(group = "com.google.android.play", module = "core-ktx")
+        // Exclude conflicting versions
+        exclude(group = "com.google.android.play", module = "core-common")
     }
 }
 
